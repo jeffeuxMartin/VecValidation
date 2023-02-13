@@ -115,7 +115,7 @@ def aggr(vecseq):
     
 def different_occurrance_aggr(vecs):
     """ 
-    aggregation of different occurance vectors. 
+    Aggregation of different occurance vectors. 
     """
     if len(vecs) < 1:
         raise ValueError
