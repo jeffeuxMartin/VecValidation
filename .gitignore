@@ -1,5 +1,4 @@
-coll.pkl
-coll2.pkl
+coll*.pkl
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

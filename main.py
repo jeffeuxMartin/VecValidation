@@ -28,7 +28,7 @@ device = ("cuda"
 
 def initModel():
     """初始化模型 """
-    model = hub.hubert().to(device).eval()
+    model = hub.wav2vec2().to(device).eval()
     return model
 
 def initData():
@@ -72,7 +72,7 @@ def collectVectors(model, dldr):
     Usage:
     vecs, uttidcs, wordidcs = zip(*coll['chapter'])
     """
-
+    return coll  # FIXME
     for w in tqdm(coll, desc='整理向量'):
         vecs, uttidcs, wordidcs = zip(*coll[w])
         coll[w] = (np.array(vecs), uttidcs, wordidcs)
@@ -96,3 +96,7 @@ def main():
 
 if __name__ == "__main__":
     coll, model, dldr = main()    
+    import pickle as pkl
+    with open('coll_w2v2.pkl', 'wb') as f:
+        pkl.dump(coll, f)
+    exit()
