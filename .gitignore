@@ -1,4 +1,6 @@
-coll*.pkl
+/coll*.pkl
+/outcoll.txt
+/outcoll_w2v2.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
